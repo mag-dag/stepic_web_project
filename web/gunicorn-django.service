@@ -1,0 +1,11 @@
+[Unit]
+Description= for django
+
+[Service]
+Type=simple
+WorkingDirectory=/home/box/web/ask
+ExecStart=gunicorn --bind 0.0.0.0:8000 ask.wsgi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

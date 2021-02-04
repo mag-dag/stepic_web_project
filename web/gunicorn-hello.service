@@ -1,0 +1,11 @@
+[Unit]
+Description= hello.py
+
+[Service]
+Type=simple
+WorkingDirectory=/home/box/web
+ExecStart=gunicorn --bind 0.0.0.0:8080 hello:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
